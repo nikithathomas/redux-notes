@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux'
-import { createNote } from '../reducers/noteReducer';
+import { createNewNote } from '../reducers/noteReducer'
 
 const NewNote = () => {
   const dispatch = useDispatch()
 
-  const addNote = (event) => {
+  const addNote = async (event) => {
     event.preventDefault()
     const content = event.target.note.value
+    dispatch(createNewNote(content));
     event.target.note.value = ''
-    dispatch(createNote(content))
   }
   return (
     <form onSubmit={addNote}>
@@ -18,4 +18,4 @@ const NewNote = () => {
   )
 }
 
-export default NewNote;
+export default NewNote

@@ -10,7 +10,7 @@ const Note = ({ clickHandler, note }) => {
   )
 }
 const Notes = () => {
-  const notes = useSelector(({filter,notes}) => {
+  const notes = useSelector(({ filter, notes }) => {
     const originalNotes = notes
     if (filter === 'ALL') {
       return originalNotes

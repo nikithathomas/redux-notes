@@ -3,18 +3,10 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import store from './store';
 
-import noteReducer from './reducers/noteReducer'
-import filterReducer from './reducers/filterReducer'
 import { Provider } from 'react-redux'
-import { configureStore } from '@reduxjs/toolkit'
 
-const store = configureStore({
-  reducer: {
-    notes: noteReducer,
-    filter: filterReducer,
-  },
-})
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
